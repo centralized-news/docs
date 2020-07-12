@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Code
-parent: UI Components
-nav_order: 6
+title: Video Posting Endpoint
+parent: API
+nav_order: 3
 ---
 
 # Code

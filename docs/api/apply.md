@@ -1,11 +1,20 @@
 ---
 layout: default
-title: Buttons
-parent: UI Components
-nav_order: 2
+title: Apply for key
+parent: API
+nav_order: 1
 ---
 
-# Buttons
+# Apply
+
+Please follow the instructions below to get an API key.
+{: .fs-5 .fw-100 }
+
+To apply for a developer key, please [email the lead developer](mailto:alec@centralizednews.org).
+{: .fs-3 .fw-100 }
+
+
+<!--# Buttons
 {: .no_toc }
 
 ## Table of contents
@@ -95,3 +104,4 @@ Use the [margin utility classes]({{ site.baseurl }}{% link docs/utilities/layout
 [Button with more space](http://example.com/){: .btn .btn-green .mr-4 }
 [Button ](http://example.com/){: .btn .btn-blue }
 ```
+-->
