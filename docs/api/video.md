@@ -5,83 +5,37 @@ parent: API
 nav_order: 3
 ---
 
-# Code
-{: .no_toc }
+# Article Posting Endpoint
 
-## Table of contents
-{: .no_toc .text-delta }
+You can post an article by making a POST request to [www.centralizednews.org/api/writers/article/new](https://www.centralizednews.org/api/writers/article/new). It is important to include the `www.` in the URL.
+It will return an error if you don't have writer access tied to your account.
 
-1. TOC
-{:toc}
-
----
-
-## Inline code
-
-Code can be rendered inline by wrapping it in single back ticks.
-
-<div class="code-example" markdown="1">
-Lorem ipsum dolor sit amet, `<inline code snippet>` adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-## Heading with `<inline code snippet>` in it.
-{: .no_toc }
-</div>
-```markdown
-Lorem ipsum dolor sit amet, `<inline code snippet>` adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-## Heading with `<inline code snippet>` in it.
-```
-
----
-
-## Syntax highlighted code blocks
-
-Use Jekyll's built-in syntax highlighting with Rouge for code blocks by using three backticks, followed by the language name:
-
-<div class="code-example" markdown="1">
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
+```json
+{
+    "title": "some title",
+    "body": "some body",
+    "image": "some image url",
+    "apikey": "your api key", // you can get one buy emailing: alec@centralizednews.org
+    "tags": "tags for seo"
 }
 ```
-</div>
-{% highlight markdown %}
+
+JS Example of This Endpoint:
+{: .fs-6 .fw-100 }
+First you have to import jQuery
+```
+https://code.jquery.com/jquery-3.5.1.min.js
+```
+Next is the script to make the post request using jQuery:
 ```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
+$.post('https://www.centralizednews.org/api/producer/video/new', {
+    "title": 'Examples are taking over documentation',
+    "videoid": 'jdnirjr09_',
+    "apikey": '1234567890',
+    "tags": 'nodejs, docs'
+}, function (result) {
+    console.log(result);
+    window.location.replace(`https://www.centralizednews.org/videos#m${result._id}`)
+})
+
 ```
-{% endhighlight %}
-
----
-
-## Code blocks with rendered examples
-
-To demonstrate front end code, sometimes it's useful to show a rendered example of that code. After including the styles from your project that you'll need to show the rendering, you can use a `<div>` with the `code-example` class, followed by the code block syntax. If you want to render your output with Markdown instead of HTML, use the `markdown="1"` attribute to tell Jekyll that the code you are rendering will be in Markdown format... This is about to get meta...
-
-<div class="code-example" markdown="1">
-
-<div class="code-example" markdown="1">
-
-[Link button](http://example.com/){: .btn }
-
-</div>
-```markdown
-[Link button](http://example.com/){: .btn }
-```
-
-</div>
-{% highlight markdown %}
-<div class="code-example" markdown="1">
-
-[Link button](http://example.com/){: .btn }
-
-</div>
-```markdown
-[Link button](http://example.com/){: .btn }
-```
-{% endhighlight %}
